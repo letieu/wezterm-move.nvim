@@ -1,5 +1,7 @@
 local WM = {}
 
+local wezterm_directions = { h = "Left", j = "Down", k = "Up", l = "Right" }
+
 -- @param direction: string (h, j, k, l)
 local function at_edge(direction)
   return vim.fn.winnr() == vim.fn.winnr(direction)
@@ -11,13 +13,6 @@ local function wezterm_exec(cmd)
   table.insert(command, 2, "cli")
   return vim.fn.system(command)
 end
-
-local wezterm_directions = {
-  h = "Left",
-  j = "Down",
-  k = "Up",
-  l = "Right",
-}
 
 -- @param direction: string (h, j, k, l)
 local function send_key_to_wezterm(direction)
