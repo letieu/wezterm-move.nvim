@@ -73,7 +73,7 @@ local function split_nav(resize_or_move, key)
 	}
 end
 
-return {
+local nav_keys = {
 	-- move between split panes
 	split_nav("move", "h"),
 	split_nav("move", "j"),
@@ -85,6 +85,11 @@ return {
 	split_nav("resize", "k"),
 	split_nav("resize", "l"),
 }
+
+-- wezterm config
+local config = {}
+
+config.keys = nav_keys
 ```
 
 ## Inspiration and Thanks
