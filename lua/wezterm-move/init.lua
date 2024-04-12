@@ -24,6 +24,7 @@ local function send_key_to_wezterm(direction)
   wezterm_exec({ "activate-pane-direction", wezterm_directions[direction] })
 end
 
+-- @param direction: string (h, j, k, l)
 WM.move = function(direction)
   if at_edge(direction) then
     send_key_to_wezterm(direction)
