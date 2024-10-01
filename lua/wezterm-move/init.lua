@@ -9,7 +9,7 @@ end
 
 local function wezterm_exec(cmd)
   local command = vim.deepcopy(cmd)
-  if vim.fn.executable("wezterm.exe") then
+  if vim.fn.executable("wezterm.exe") == 1 then
     table.insert(command, 1, "wezterm.exe")
   else
     table.insert(command, 1, "wezterm")
